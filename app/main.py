@@ -8,7 +8,7 @@ app = FastAPI(title="Notatnik API", version="1.0.0")
 @app.get("/health")
 def health_check():
     """Prosty endpoint do weryfikacji, że serwis działa (używany też do testu CI/CD)."""
-    return {"status": "ok"}
+    return {"status": "ok", "deployment": "CI/CD test successful"}
 
 
 @app.get("/notes/", response_model=list[NoteResponse])
